@@ -11,6 +11,10 @@ public class Request {
     }
 
     public void attr(String name, Object value) {
+        httpServletRequest.setAttribute(name, value);
+    }
 
+    public HttpServletRequest getRaw() {
+        return httpServletRequest;
     }
 }

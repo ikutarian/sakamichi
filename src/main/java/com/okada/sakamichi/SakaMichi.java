@@ -5,9 +5,11 @@ import java.util.Map;
 
 public class SakaMichi {
 
+    private static final ThreadLocal<SakaMichiContext> CONTEXT = new ThreadLocal<>();
+
     private final Map<String, Route> routeMap;
 
-    public SakaMichi() {
+    private SakaMichi() {
         routeMap = new HashMap<>();
     }
 
@@ -19,6 +21,15 @@ public class SakaMichi {
 
     public Route matchUri(String uri) {
         return routeMap.get(uri);
+    }
+
+    public static void initContext(Request request, Response response) {
+        SakaMichiContext marioContext = new SakaMichiContext(request, response);
+        CONTEXT.set(marioContext);
+    }
+
+    public static SakaMichiContext getContext() {
+        return CONTEXT.get();
     }
 
     private static class InstanceHolder {

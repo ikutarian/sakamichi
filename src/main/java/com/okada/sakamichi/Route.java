@@ -37,4 +37,13 @@ public class Route {
     public Object getController() {
         return controller;
     }
+
+    @Override
+    public String toString() {
+        return "Route{" +
+                "uri='" + uri + '\'' +
+                ", action=" + action.getName() +
+                ", controller=" + controller.getClass().getName() +
+                '}';
+    }
 }

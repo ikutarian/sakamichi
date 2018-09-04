@@ -16,6 +16,8 @@ public class SakaMichiFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        log.info("SakaMichi初始化");
+
         SakaMichi sakaMichi = SakaMichi.noboru();
 
         String bootstrapClassName = filterConfig.getInitParameter(Constants.InitParameter.BOOTSTRAP);
@@ -51,7 +53,7 @@ public class SakaMichiFilter implements Filter {
         SakaMichi sakaMichi = SakaMichi.noboru();
         Route route = sakaMichi.matchUri(uri);
         if (route != null) {
-            log.info("匹配uri:" + uri);
+            log.info("匹配uri成功：" + route);
             handle(httpRequest, httpResponse, route);
         } else {
             log.warn("未找到匹配的uri: " + uri);
@@ -61,6 +63,8 @@ public class SakaMichiFilter implements Filter {
     private void handle(HttpServletRequest httpRequest, HttpServletResponse httpResponse, Route route) {
         Request request = new Request(httpRequest);
         Response response = new Response(httpResponse);
+
+        SakaMichi.initContext(request, response);
 
         Object controller = route.getController();
         Method action = route.getAction();
@@ -74,5 +78,7 @@ public class SakaMichiFilter implements Filter {
     }
 
     @Override
-    public void destroy() {}
+    public void destroy() {
+        log.info("destroy");
+    }
 }
