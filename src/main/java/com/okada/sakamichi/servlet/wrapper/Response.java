@@ -1,4 +1,9 @@
-package com.okada.sakamichi;
+package com.okada.sakamichi.servlet.wrapper;
+
+import com.okada.sakamichi.config.Constants;
+import com.okada.sakamichi.util.JSONUtils;
+import com.okada.sakamichi.SakaMichi;
+import com.okada.sakamichi.SakaMichiContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +44,8 @@ public class Response {
         HttpServletRequest servletRequest = sakaMichiContext.getRequest().getRaw();
         HttpServletResponse servletResponse = sakaMichiContext.getResponse().getRaw();
         try {
-            servletRequest.getRequestDispatcher("/WEB-INF/view/" + templateName + ".jsp").forward(servletRequest, servletResponse);
+            servletRequest.getRequestDispatcher(Constants.DEFAULT_VIEW_PREFIX + templateName + Constants.DEFAULT_VIEW_SUFFIX)
+                    .forward(servletRequest, servletResponse);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

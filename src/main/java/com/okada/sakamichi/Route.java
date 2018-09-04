@@ -1,5 +1,9 @@
 package com.okada.sakamichi;
 
+import com.okada.sakamichi.servlet.wrapper.Request;
+import com.okada.sakamichi.servlet.wrapper.Response;
+import com.okada.sakamichi.util.ValidateUtils;
+
 import java.lang.reflect.Method;
 
 /**
@@ -12,9 +16,9 @@ public class Route {
     private final Object controller;
 
     public Route(String uri, String action, Object controller) {
-        Validate.notBlank(uri, "uri不能为空");
-        Validate.notBlank(action, "action不能为空");
-        Validate.notNull(controller, "controller不能为空");
+        ValidateUtils.notBlank(uri, "uri不能为空");
+        ValidateUtils.notBlank(action, "action不能为空");
+        ValidateUtils.notNull(controller, "controller不能为空");
 
         this.uri = uri;
         try {

@@ -3,9 +3,9 @@ package com.okada.sakamichi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Nogizaka46 implements Bootstrap {
+public class App implements Bootstrap {
 
-    private static final Logger log = LoggerFactory.getLogger(Nogizaka46.class);
+    private static final Logger log = LoggerFactory.getLogger(App.class);
 
     @Override
     public void init(SakaMichi sakaMichi) {

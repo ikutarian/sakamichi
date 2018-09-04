@@ -1,4 +1,4 @@
-package com.okada.sakamichi;
+package com.okada.sakamichi.util;
 
 public class StringUtils {
 

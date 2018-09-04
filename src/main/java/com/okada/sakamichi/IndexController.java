@@ -1,5 +1,8 @@
 package com.okada.sakamichi;
 
+import com.okada.sakamichi.servlet.wrapper.Request;
+import com.okada.sakamichi.servlet.wrapper.Response;
+
 import java.util.HashMap;
 import java.util.Map;
 

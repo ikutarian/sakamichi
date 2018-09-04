@@ -1,5 +1,8 @@
 package com.okada.sakamichi;
 
+import com.okada.sakamichi.servlet.wrapper.Request;
+import com.okada.sakamichi.servlet.wrapper.Response;
+
 public class UserController {
 
     /**

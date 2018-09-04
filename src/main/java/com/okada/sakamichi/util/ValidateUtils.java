@@ -1,6 +1,6 @@
-package com.okada.sakamichi;
+package com.okada.sakamichi.util;
 
-public class Validate {
+public class ValidateUtils {
 
     public static void notBlank(String str, String message) {
         if (StringUtils.isBlank(str)) {

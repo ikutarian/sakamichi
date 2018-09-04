@@ -1,4 +1,4 @@
-package com.okada.sakamichi;
+package com.okada.sakamichi.servlet.wrapper;
 
 import javax.servlet.http.HttpServletRequest;
 

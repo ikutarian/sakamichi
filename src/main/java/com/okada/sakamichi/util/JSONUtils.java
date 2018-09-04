@@ -1,4 +1,4 @@
-package com.okada.sakamichi;
+package com.okada.sakamichi.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
